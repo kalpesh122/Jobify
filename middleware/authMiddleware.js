@@ -7,6 +7,7 @@ import { verifyJWT } from '../utils/tokenUtils.js';
 
 export const authenticateUser = (req, res, next) => {
   const { token } = req.cookies;
+  console.log(token,"DBG-1");
   if (!token) throw new UnauthenticatedError('authentication invalid');
 
   try {
