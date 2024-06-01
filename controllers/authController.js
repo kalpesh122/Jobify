@@ -22,7 +22,10 @@ export const login = async (req, res) => {
 
   if (!isValidUser) throw new UnauthenticatedError('invalid credentials');
 
+  console.log({ userId: user._id, role: user.role },"DBG-2");
   const token = createJWT({ userId: user._id, role: user.role });
+  console.log(token,"DBG-3");
+
 
   const oneDay = 1000 * 60 * 60 * 24;
 
